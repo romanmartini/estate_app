@@ -1,0 +1,130 @@
+/* ========================================================
+# Layout
+======================================================== */
+
+
+.search-filter{
+    position: sticky;
+    float: left;
+    top: 1vh;
+    left: 1rem;    
+    height: calc(97vh - var(--header-heigth));
+    width: var(--search-filter-width);   
+    transition: all .3s;
+    z-index: 999;
+}
+
+@media (max-width: 992px){
+
+    .search-filter{
+        transform: translate(calc(0px - var(--search-filter-width) ), 0px);
+        width: 0;
+    }
+
+}
+
+/* ======================================================= 
+# Search filter
+======================================================== */
+.search-filter form{
+    background-image: linear-gradient(180deg, var(--bg-primary), var(--bg-secodary) 50%);
+    width: 100%;  
+    height: 100%;
+    padding: 1rem;
+    color: white;
+    border-radius: 8px;
+}
+
+.contract{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 0 1rem 1rem 1rem;
+    height: 5rem;
+}
+.contract label{
+    color: #999;
+    cursor: pointer;
+    position: relative;
+    transition: all .3s;
+}
+.contract label:hover{
+    color: white;
+
+}
+.contract label.is-active{
+    color: white;
+    font-weight: var(--fw-3);
+}
+.contract input{
+    position: absolute;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--bg-light);
+    top: 2rem;
+    left: 45%;
+    opacity: 0;
+    transition: all .3s;
+
+}
+.contract input:checked{
+    opacity: 1;
+}
+
+/* =========================================================================
+# Card
+========================================================================== */
+.card{
+    flex-grow: 1;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    width: 288px;
+    height: 500px;
+    border-radius: .6rem;
+    border: 1px #cfcfcf solid;
+
+    background-image: linear-gradient(120deg, var(--bg-primary), var(--bg-primary) 80%);  
+    color: var(--text-primary);
+
+}
+
+
+
+
+.card-body{
+    padding: .6rem;
+}
+.card img{
+    border-radius: .5rem .5rem 0 0 ;
+}
+[data-property]{
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+}
+[data-property] div{
+    padding-right: .6rem;
+    font-size: 10px;
+}
+[data-img]{
+    border-bottom: 1px solid rgba(0,0,0,.125) ;
+}
+[data-price]{
+    font-weight: 400;
+}
+[data-expenses], [data-address], [data-city], [data-title] {
+    font-size: var(--font-size-sm);
+}
+[data-expenses], [data-city]{
+    color: var(--text-secondary);
+}
+
+[data-img] div{
+    width: 100%;
+    height: 200px;
+}
+[data-img] div:not(:first-child){
+    display: none;
+}

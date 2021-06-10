@@ -1,0 +1,72 @@
+.picture-frame{
+    position: fixed;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    background-color: rgba(122, 112, 112, 0.8);
+    width: 100vw;
+    height: 100vh;
+    transition: all .3s;
+}
+.picture-frame.is-active{
+    opacity: 1;
+    pointer-events: painted;
+}
+
+.picture{
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    padding: 2rem;
+    border-radius: 3px;
+    background-color: #fff;
+    overflow: hidden;
+
+}
+.picture figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
+}
+.picture img {
+    object-fit: cover;
+    object-position: center;
+    overflow: auto;
+
+    /* position: relative;
+    border-radius: 2px; */
+}
+.fa-closed{
+    position: absolute;
+    content: url(../../assets/close.svg);
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: .2rem;
+    top: 1rem;
+    right: .75rem;
+    background-color: rgb(212, 211, 211);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .3s;
+}
+.fa-closed:hover{
+    background-color: rgba(212, 211, 211, 0.658);
+
+}
+#form-delete{
+    position: absolute;
+    display: block;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 1rem;
+    background-color: #fff;
+    text-align: center;
+}
