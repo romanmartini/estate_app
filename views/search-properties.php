@@ -12,15 +12,19 @@ $rooms = ( isset($rooms) ) ? $rooms : '0' ;
 $currency =  ( isset($currency) ) ? $currency : 'ARS' ;
 $price_min = ( isset($price_min) ) ? $price_min : '' ;
 $price_max = ( isset($price_max) ) ? $price_max : '' ;
-$id_user = '';
-if( !empty($_GET) ){
 
+// Query
+if( !empty($_GET) ){
+    
+    $_GET['from_home'] = true;
     foreach($_GET as $key => $value) $$key = $value;
     
-    $properties = $properties_controller->get($id_user, $contract, $city, $type, $rooms, $bedrooms, $currency, $price_min, $price_max, false);
+    $properties = $properties_controller->get($contract, $city, $type, $rooms, $bedrooms, $currency, $price_min, $price_max, false);
 
 } 
 else{
+
+    $_GET['from_home'] = true;
     $properties = $properties_controller->get();
 }
 
@@ -101,8 +105,8 @@ echo $template_search_filter;
 /* Properties
 ==============================================================*/
 
-echo "<section class='flex main-section'>
-        <div class='flex-wrap justify-content-between'>";
+echo "<section class=''>
+        <div class='cards-properties'>";
 foreach( $properties as $property ){
 
     $template_img = ''; 
@@ -111,21 +115,48 @@ foreach( $properties as $property ){
 
     foreach( $img as $name_img):
         $url = './public/img/'.$creator.'/'.$name_img;
-        $template_img .= '<div><img src="'.$url.'"></div>';
+        $template_img .= '<div class="img-property-card"><img  src="'.$url.'"></div>';
     endforeach;
 
 
     $template_property = "
-        <div class='card mb-4'>
-            <div data-img class='flex'>
+        <div class='card-property'>
+
+            <div class='card-property-img' data-img class=''>
                 $template_img
             </div>
-            <div class='card-body flex-column justify-content-between'>
-                <div>
-                    <div data-price >$currency $price</div>
-                    <div data-expenses='$expenses'>+ $ $expenses Expensas</div>
+
+            <div class='card-property-body'>
+
+                <div class='card-property-header'>
+                    <div class='card-property-type'>$type</div>
+                    <div class='card-property-title' data-title>$title</div>
                 </div>
-                <div>
+
+                <div class='card-property-data' data-property>
+                    <div>   
+                        <i class='i i-rule'></i>
+                        <span data-total-area='$total_area'>$total_area m<sup>2</sup></span>
+                    </div>
+                    <div>
+                        <i class='i i-door'></i>
+                        <span data-rooms='$rooms'>$rooms amb.</span>
+                    </div>
+                    <div>
+                        <i class='i i-bed'></i>
+                        <span data-bedrooms='$bedrooms'>$bedrooms dorm.</span>
+                    </div>
+                    <div>
+                        <i class='i i-toilet'></i>
+                        <span data-bathrooms='$bathrooms'>$bathrooms bañ.</span>
+                    </div>
+                    <div>
+                        <i class='i i-garage'></i>
+                        <span data-garage='$garage'>$garage coch.</span>
+                    </div>
+                </div>
+
+                <div class='card-property-location'>
                     <div data-address>$address</div>
                     <div data-city>
                         <span>$city, </span>
@@ -133,35 +164,21 @@ foreach( $properties as $property ){
                         <span>$country</span>
                     </div>
                 </div>
-                <div data-property>
-                    <div>   
-                        <i class='fa fa-rule'></i>
-                        <span data-total-area='$total_area'>$total_area m<sup>2</sup></span>
-                    </div>
-                    <div>
-                        <i class='fa fa-door'></i>
-                        <span data-rooms='$rooms'>$rooms amb.</span>
-                    </div>
-                    <div>
-                        <i class='fa fa-bed'></i>
-                        <span data-bedrooms='$bedrooms'>$bedrooms dorm.</span>
-                    </div>
-                    <div>
-                        <i class='fa fa-toilet'></i>
-                        <span data-bathrooms='$bathrooms'>$bathrooms bañ.</span>
-                    </div>
-                    <div>
-                        <i class='fa fa-garage'></i>
-                        <span data-garage='$garage'>$garage coch.</span>
-                    </div>
+
+                
+                <div class='card-property-prices'>
+                    <div class='card-property-price' data-price >$currency $price</div>
+                    <div class='card-property-expenses' data-expenses='$expenses'>+ $ $expenses Expensas</div>
                 </div>
-                <div data-title>$title</div>
-                <hr>
-                <form method='GET' >
-                    <input type='submit' class='btn-primary' value='Ver' >
-                    <input name='id_property' type='hidden' value='$id_property' >
+
+                <form class='card-property-form'  method='GET' >
+                    <input type='submit' class='' value='Ver' >
+                    <input type='hidden' name='r' value='property'>
+                    <input type='hidden' name='id_property' value='$id_property'>
                 </form>
+
             </div>
+
         </div>";
     echo $template_property;
 }

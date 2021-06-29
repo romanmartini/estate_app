@@ -9,10 +9,21 @@ class PropertiesController extends PropertiesModel {
 
     }
 
-    public function get($id_user = '', $contract = 'rent', $city = '', $type = '', $rooms = 0, $bedrooms = 0, $currency = 'ARS', $price_min = '', $price_max = '', $all = true, $status = 'actived'){
+    public function get($contract = 'rent', $city = '', $type = '', $rooms = 0, $bedrooms = 0, $currency = 'ARS', $price_min = '', $price_max = '', $all = true, $status = 'all'){
 
-        return $this->model->get($id_user, $contract, $city, $type, $rooms, $bedrooms, $currency, $price_min, $price_max, $all, $status);
+        return $this->model->get($contract, $city, $type, $rooms, $bedrooms, $currency, $price_min, $price_max, $all, $status);
     
+    }
+
+    public function set($property_data = array()){
+
+        return $this->model->set($property_data);
+
+    }
+
+    public function del($id_property = ''){
+
+        return $this->model->del($id_property);
     }
 
 

@@ -1,4 +1,4 @@
-USE estate;
+USE c2230446_estate;
 
 
 INSERT INTO property_type(property_type) 

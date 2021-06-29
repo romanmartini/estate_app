@@ -1,7 +1,5 @@
 'use strict'
-// ===================================================================
-// home 
-// ===================================================================
+
 function removeDataProperties(selector){
     let $propertyData = document.querySelectorAll(selector);
 

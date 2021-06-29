@@ -1,0 +1,139 @@
+/* ================================================================== 
+# theme - layout
+================================================================== */
+
+.header{
+
+    background: transparent;
+    box-shadow: none;
+
+}
+
+.main{
+
+    background: transparent;
+
+}
+
+.footer{
+
+    background: transparent;
+
+}
+
+
+/* ================================================================== 
+# style singup
+================================================================== */
+
+.singup-section{
+
+    height: 100%;
+
+}
+
+.singup-section::after{
+    content: '';
+    position: absolute;
+    top:0;
+    left: -25%;
+    width: 600px;
+    height: 600px;
+    background-image: radial-gradient(var(--brand)10px, var(--bg-main)300px);
+    background-repeat: no-repeat;
+    opacity: .3;
+    z-index: -1;
+}
+
+.singup{
+
+    width: 100%;    
+
+}
+
+.singup-form{
+
+    max-width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--bg-card);
+    box-shadow: var(--shadow-card);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.singup-form > div {
+
+    width: 300px;
+
+}
+
+@media screen and (min-width: 768px){
+
+    .singup-form{
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 5rem;
+    }
+
+
+}
+
+.type-user [type='submit']{
+    
+    width: 180px;
+    height: 130px;
+    font-weight: 500;
+    border: none;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+@media screen and (max-width: 780px){
+
+    .type-user [type='submit']{
+
+        width: 150px;
+        height: 100px;
+    }
+
+}
+
+@media screen and (max-width: 480px){
+
+    .type-user [type='submit']{
+
+        width: 130px;
+        height: 80px;
+    }
+
+}
+
+.type-user form{
+
+    position: relative;
+    color: var(--text-placeholder);
+    background-color: var(--bg-card);
+    box-shadow: var(--shadow-card);
+    cursor: pointer;
+    transition: all .3s;
+
+}
+
+.type-user form:hover{
+
+    color: var(--white);
+    background-color: var(--brand-hover);
+
+}
+.type-user form:active{
+
+    color: var(--white);
+    background-color: var(--brand-active);
+
+}

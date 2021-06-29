@@ -1,0 +1,56 @@
+/* ================================================================== 
+# theme - layout
+================================================================== */
+
+.header{
+    background: transparent;
+    box-shadow: none;
+}
+.main{
+    background: transparent;
+}
+
+footer{
+    display: none;
+}
+
+/* ================================================================== 
+# style singup
+================================================================== */
+
+.section-login{
+
+    /* margin-left: 50%; */
+
+}
+.section-login::after{
+    content: '';
+    position: absolute;
+    top:0;
+    left: -25%;
+    width: 600px;
+    height: 600px;
+    background-image: radial-gradient(var(--brand)10px, var(--bg-main)300px);
+    background-repeat: no-repeat;
+    opacity: .3;
+    z-index: -1;
+}
+
+@media screen and (max-width: 760px){
+
+    .section-login{
+        margin-left: 0;
+    }
+
+}
+
+.section-login > div {
+
+    background-color: var(--bg-card);
+    box-shadow: var(--shadow-card);
+
+}
+
+.login .btn-50{
+    margin-top: 8px;
+}

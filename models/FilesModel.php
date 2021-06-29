@@ -21,7 +21,7 @@ class FilesModel extends ModelFiles{
 
             if( mb_eregi('gif', $file) || mb_eregi('jpg', $file) || mb_eregi('png', $file) || mb_eregi('jpeg', $file) ){
 
-                array_push($files_array, self::$directory.'/'.$file);
+                array_push($files_array, self::$directory.$file);
 
             }
         }

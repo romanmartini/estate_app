@@ -1,11 +1,11 @@
 /* 
 
-*/
+
 DROP DATABASE IF EXISTS estate;
 
 CREATE DATABASE IF NOT EXISTS estate;
-
-USE estate;
+*/
+USE c2230446_estate;
 
 
 /* DATA PROPERTY */                                     

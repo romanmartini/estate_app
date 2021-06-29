@@ -1,0 +1,316 @@
+[class*='btn'], [class*='input']{
+
+  display: block;
+
+  outline: none;
+
+}
+
+/* ======================================================================= 
+  buttons
+======================================================================= */
+
+[class*='btn']{
+  
+  border: none;
+  font-family: var(--font-family);
+  font-weight: 500;
+  padding: 8px 32px;
+  color: var(--white);
+  background-color: var(--brand);
+  width: max-content;
+  cursor: pointer;
+  transition: all .3s;
+
+}
+
+[class*='btn']:hover{
+
+  background-color: var(--brand-hover);
+
+}
+
+[class*='btn']:active{
+
+  background-color:var(--brand-active);
+
+}
+
+[class*='btn']:focus{
+
+  background-color: var(--brand-active);
+
+}
+
+.btn-50{
+
+  width: 50%;
+
+}
+
+.btn-100{
+
+  width: 100%;
+
+}
+
+/* ======================================================================= 
+  input
+======================================================================= */
+
+[class*='input']{
+
+  border: none;
+  border-bottom: solid 1px var(--brand);
+  border-bottom-width: 2px;
+  display: inline-block;
+  padding: 8px 0;
+  background-color: inherit;
+  color: var(--color-text);
+
+}
+
+[class*='input-icon']{
+
+  padding: 8px 16px 8px 26px;
+
+}
+
+.input-100{
+
+  width: 100%;
+
+}
+
+/* ======================================================= 
+# label
+======================================================== */
+.label {
+
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+  cursor: text;
+  position: absolute;
+  left: 0;
+  top: 8px;
+  transform: translateY(0);
+  transition: all 0.2s ease-out;
+  pointer-events: none;
+
+}
+
+input:not(:placeholder-shown) + .label,
+input:focus + label{
+  
+  transform: translateY(-1.1rem);
+  font-size: var(--font-size-sm);
+  opacity: .7;
+
+}
+
+/* ======================================================= 
+# link
+======================================================== */
+
+.link{
+  color: var(--brand);
+  transition: all .3s;
+  cursor: pointer;
+}
+.link:hover{
+  color: var(--brand-hover);
+}
+
+.link:active{
+  color:var(--brand-active);
+}
+
+.link:focus{
+  color: var(--brand-active);
+}
+
+/* ======================================================================= 
+  navbar
+======================================================================= */
+
+.navbar{
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.nav-link{
+
+  color: var(--color-text);
+  transition: all .2s;
+
+}
+
+.nav-link::before{
+
+  content: ' ';
+  color: var(--color-text);
+  border-bottom: solid 2px var(--color-text-hover);
+  position: absolute;
+  width: 0%;
+  bottom: -6px;
+  transition: all .5s;
+
+}
+
+.nav-link:hover{
+
+  color: var(--color-text-hover);
+
+}
+
+.nav-link:hover::before{
+
+  width: 50%;
+  color: var(--color-text-hover);
+
+}
+
+.brand-logo{
+
+  width: 32px;
+  height: 32px;
+  color: var(--color-text);
+
+}
+
+.brand-text{
+
+  position: absolute;
+  left: 36px;
+  bottom: -2px;
+
+}
+
+.brand span{
+
+  display: block;
+  color: var(--color-text);
+  font-size: 11px;
+  line-height: 10px;
+
+}
+
+/* ======================================================================= 
+  icon
+======================================================================= */
+.icon{
+  width: 24px;
+  height: auto;
+  cursor: pointer;
+  transition: all .3s;
+}
+.icon:hover{
+  opacity: .8;
+}
+.icon-sun{
+  content: url(../../assets/sun.svg);
+}
+.icon-moon{
+  content: url(../../assets/moon.svg);
+}
+
+
+.fa-key, .fa-user{
+
+  position: absolute;
+  color: var(--text-placeholder);
+  font-size: 1rem;
+  width: 1rem;
+  height: 1rem;
+  top: 9px;
+  left: 6px;
+
+}
+
+.fa-arrow-left{
+
+  margin-right: 6px;
+
+}
+
+.i{
+
+  position: relative;
+  top: .16rem;
+  width: .9rem;
+  height: .9rem;
+  margin-right: .25rem;
+
+} 
+
+.i-bed{
+
+  content: url(../../assets/bed.svg);
+
+}
+
+.i-door{
+
+  content: url(../../assets/door.svg);
+
+}
+
+.i-garage{
+
+  content: url(../../assets/garage.svg);
+
+}
+
+.i-rule{
+
+  content: url(../../assets/rule.svg);
+
+}
+
+.i-toilet{
+
+  content: url(../../assets/toilet.svg);
+
+}
+
+/* ========================================================
+# Decorations
+======================================================== */
+
+/* Circle
+============================ */
+
+.circle-img-1{
+  border: solid 3px var(--gray-70);
+  box-shadow: var(--shadow-100);
+  width: 280px;
+  height: 280px;
+  overflow: hidden;
+  margin: auto;
+  border-top-left-radius: 75% 50%;
+  border-top-right-radius: 53% 52%;
+  border-bottom-left-radius: 67% 77%;
+  border-bottom-right-radius: 55% 72%;
+}
+.circle-img-2{
+  border: solid 3px var(--brand-50);
+  box-shadow: var(--shadow-100);
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin-top: -10%;
+  margin-left: 50%;
+  border-top-left-radius: 75% 50%;
+  border-top-right-radius: 53% 52%;
+  border-bottom-left-radius: 67% 77%;
+  border-bottom-right-radius: 55% 72%;
+}
+
+[class*='circle-img-'] img{
+  object-fit: cover;
+  overflow: hidden;
+}

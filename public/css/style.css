@@ -1,0 +1,240 @@
+:root{
+    --font-family: 'Montserrat', sans-serif;
+
+    /* xs / lg / xl / xxl */
+    --font-size-sm: .75rem;
+    --font-size-md: .9rem;
+    --fw-3: 500;
+    
+    --text-placeholder: #b1afc2;
+
+    --brand: #d84a16;
+    --brand-50: #d84a1681;
+    --brand-active: #c04c0e;
+    --brand-hover: rgb(209, 100, 60);
+    --shark: #2C2C30;
+    --shark-90: #38383d;
+    --white: #fafcff;
+    --gray: #56535f;
+    --gray-70: #56535fb0;
+    --fff: #fff;
+
+    /* border
+    ========================== */
+    
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 15px;
+
+    /* shadow
+    ========================== */
+    --shadow-01: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    --shadow-02: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; 
+    --shadow-03: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    --shadow-04: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    --shadow-04: rgba(136, 165, 191, 0.48) 5px 2px 16px 0px, rgba(225, 225, 225, 0.8) -6px -2px 16px 0px;
+    --shadow-05: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    --shadow-06: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    --shadow-06: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+
+    --shadow-card-ligth: 8px 15px 30px -10px #bcb1f71c, 1px 1px 5px 1px rgba(184, 184, 184, 0.5);
+    --shadow-card-dark: 8px 15px 30px -10px #00000070, 0px 0px 30px -15px #ffffff6e inset;
+    
+    /* layout */
+    --search-filter-width: 19rem;
+    --admin-menu: 12rem;
+    --footer-heigth: 100px;
+}
+
+/* ======================================================= 
+# Themes
+======================================================== */
+
+.ligth-theme{
+
+    --color-text: var(--shark);
+    --color-text-hover: var(--gray);
+
+    --bg-nav: var(--white);
+    --bg-main: var(--white);
+    --bg-footer: var(--brand);
+
+    --bg-card: var(--fff);
+    --shadow-card: var(--shadow-card-ligth);
+
+}
+
+.dark-theme{
+
+    --color-text: var(--fff);
+    --color-text-hover: var(--white);
+
+    --bg-nav: var(--shark);
+    --bg-main: var(--shark);
+    --bg-footer: var(--shark);
+
+    --bg-card: var(--shark-90);
+    --shadow-card: var(--shadow-card-dark);
+
+}
+
+body{
+
+    background-color: var(--bg-main);
+    
+}
+
+/* ======================================================= 
+# Reset
+======================================================== */
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+
+ -webkit-box-shadow: 0 0 0 30px var(--bg-card) inset !important;
+
+}
+
+/*Change text in autofill textbox*/
+input:-webkit-autofill{
+
+ -webkit-text-fill-color: var(--color-text) !important;
+
+}
+
+html{
+
+    box-sizing: border-box;
+
+}
+
+*,
+*:after,
+*::before{
+
+    box-sizing: inherit;
+
+}
+
+body{
+
+    position: relative;
+    min-height: 100vh;
+    font-family: var(--font-family);
+
+}
+
+img{
+
+    width: 100%;
+    height: auto;
+
+}
+
+h1, h2, h3, h4, h5, h6{
+
+    font-weight: 500;
+
+}
+
+h1, h2, h3, h4, h5, h6, p{
+
+    color: var(--color-text);
+    margin: 0;
+
+}
+@media screen and (max-width: 760px){
+
+    h1{
+
+        font-size: 1.5rem;
+
+    }
+}
+@media screen and (max-width: 360px){
+
+    h1{
+
+        font-size: 1.4rem;
+
+    }
+}
+
+div{
+
+    position: relative;
+
+}
+
+
+
+a{
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--shark);
+}
+
+
+
+
+
+/* ======================================================= 
+# Grid
+======================================================== */
+
+.grid{
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    "header"
+    "main" 
+    "footer";
+
+}
+
+/* ======================================================= 
+# Header
+======================================================== */
+
+.header{
+
+    grid-area: header;
+    z-index: 9999;
+    padding: 1.5rem 0;
+    font-size: var(--font-size-md);
+    background-color: var(--bg-nav);
+    box-shadow: var(--shadow-20);
+    border-top: solid 3px var(--brand);
+
+}
+
+
+
+/* ======================================================= 
+# main
+======================================================== */
+
+.main{
+
+    background-color: var(--bg-main);
+    grid-area: main;
+    padding: 1rem 0;
+
+}
+
+/* ======================================================= 
+# Footer
+======================================================== */
+
+.footer{
+
+    background-color: var(--bg-footer);
+    min-height: var(--footer-heigth);
+    grid-area: footer;
+
+}

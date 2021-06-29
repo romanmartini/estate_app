@@ -10,9 +10,9 @@
     background-color: rgba(122, 112, 112, 0.8);
     width: 100vw;
     height: 100vh;
-    transition: all .3s;
 }
 .picture-frame.is-active{
+    transition: all .3s;
     opacity: 1;
     pointer-events: painted;
 }
@@ -41,8 +41,6 @@
     object-position: center;
     overflow: auto;
 
-    /* position: relative;
-    border-radius: 2px; */
 }
 .fa-closed{
     position: absolute;

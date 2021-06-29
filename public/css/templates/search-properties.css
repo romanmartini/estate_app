@@ -1,0 +1,129 @@
+/* ========================================================
+# Layout
+======================================================== */
+
+/* ======================================================= 
+# Search filter
+======================================================== */
+
+/* =========================================================================
+# Card
+========================================================================== */
+
+/* Grid Layout 
+==============================================*/
+
+.card-property{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    padding: .5rem;
+    background-color: var(--bg-card);
+    box-shadow: var(--shadow-card);
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius-md);
+
+
+}
+.card-property-img{
+    /* grid-area: img; */
+}
+.card-property-body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1rf;
+    gap: .5rem;
+    grid-template-rows: repeat(3, 2rem);
+    overflow: hidden;
+    width: 100%;
+    font-size: 85%;
+
+}
+@media screen and (min-width: 480px){
+    .card-property-body{
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+@media screen and (min-width: 768px){
+
+    .card-property-body{
+        grid-template-rows: repeat(4, 1fr);
+        font-size: 100%;
+
+    }
+}
+
+/* Card property
+==============================================*/
+
+/* card img
+================= */
+
+.img-property-card{
+    height: 100%;
+  
+}
+
+.img-property-card img{
+    min-height: 112px;
+    max-height: 112px;
+    min-width: 112px;
+    object-fit: cover;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-card);
+}
+@media screen and (min-width: 480px){
+    .img-property-card img{
+        max-height: 100%;
+        height: 100%;
+    }
+}
+[data-img] div:not(:first-child){
+    display: none;
+}
+
+/* card body
+================= */
+.card-property-body > *{
+    overflow: hidden;
+    color: var(--color-text);
+}
+.card-property-header{
+    overflow: hidden;
+}
+.card-property-type{
+    opacity: .8;
+}
+.card-property-title{
+    font-weight: 500;
+    font-size: 110%;
+}
+.card-property-price{
+    font-weight: 500;
+    font-size: 110%;
+}
+.card-property-expenses{
+    opacity: .8;
+}
+.card-property-location{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    opacity: .8;
+}
+.card-property-data{
+    display: none;
+}
+
+@media screen and (min-width: 768px){
+    .card-property-data{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+.card-property-form{
+    display: none;
+}
+
