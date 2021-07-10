@@ -9,7 +9,7 @@ class PropertiesController extends PropertiesModel {
 
     }
 
-    public function get($contract = 'rent', $city = '', $type = '', $rooms = 0, $bedrooms = 0, $currency = 'ARS', $price_min = '', $price_max = '', $all = true, $status = 'all'){
+    public function get($contract = 'rent', $city = '', $type = array(0) , $rooms = 0, $bedrooms = 0, $currency = 'ARS', $price_min = '', $price_max = '', $all = true, $status = 'all'){
 
         return $this->model->get($contract, $city, $type, $rooms, $bedrooms, $currency, $price_min, $price_max, $all, $status);
     

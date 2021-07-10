@@ -1,4 +1,5 @@
 <?php
+$style = $GLOBALS['route'];
 
     if( isset($_SESSION['active']) && isset($_SESSION['role']) && $_SESSION['role'] === 'author'){
         $template_navbar = "
@@ -36,7 +37,6 @@
         ";
     }
 
-$style = $GLOBALS['route'];
 
 $templamte_header = "
     <!DOCTYPE html>
@@ -46,12 +46,10 @@ $templamte_header = "
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title>Document</title>
+
         <link rel='icon' type='image/ico' href='./assets/favicon.ico' sizes='64x64'>
-
-
         <link rel='preconnect' href='https://fonts.gstatic.com'>
         <link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;800&display=swap' rel='stylesheet'>
-
         <link rel='stylesheet' href='./public/css/normalize.css'>
         <link rel='stylesheet' href='./public/css/style.css'>
         <link rel='stylesheet' href='./public/css/utilities.css'>
@@ -59,7 +57,7 @@ $templamte_header = "
         <link rel='stylesheet' href='./public/css/templates/$style.css'>
         
         
-        <script src='./public/js/dom/toggleTheme.js'></script>
+        <script src='./public/js/modules/toggleTheme.js'></script>
 
     </head>
     <body class='grid ligth-theme'>
@@ -84,6 +82,6 @@ $templamte_header = "
             </div>
         </header>
         <main class='main'>
-            <div class='layout-container'>
-";
+            <div class='layout-container'>";
+
 echo $templamte_header;

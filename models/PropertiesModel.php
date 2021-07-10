@@ -6,8 +6,25 @@ class PropertiesModel extends Model {
     protected function get($contract, $city, $type, $rooms, $bedrooms, $currency, $price_min, $price_max, $all, $status){
         
         /* Format variables */
-        if( !empty($city) ) $city = trim($city);
-        if( $type == 0) $type = null;
+            if( !empty($city) ) $city = trim($city);
+        //
+
+        // type
+            $query_type = "";
+            
+            if ( $type[0] != 0) {
+
+                $i = 0;
+                foreach($type as $value){
+                    $query_type .= ( $i === 0 )
+                        ? "AND (type = '$value'"
+                        : " OR type = '$value'";
+                    $i++;
+                } 
+                $query_type .= ")";
+            }
+        
+        //
 
         $status = ( isset($_GET['from_home']) ) ? 'actived' : $status;
         $id_user = ( isset($_SESSION['id_user']) && !isset($_GET['from_home']) ) ? $_SESSION['id_user'] : false;
@@ -30,9 +47,7 @@ class PropertiesModel extends Model {
             if ( !empty($price_max) ) $query .="
             AND price <= '$price_max'";
             
-            if ( $type != 0) $query .= "
-            AND type = '$type'";
-            
+            $query .= $query_type;
             
             if( $bedrooms == 5) $query .="
             AND bedrooms >= '$bedrooms'";
